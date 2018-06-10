@@ -37,7 +37,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(18446744073709551615);
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                 = 30;
 const uint32_t ZAWY_DIFFICULTY_LAST_BLOCK                 = 0;
-const uint64_t ZAWY_DIFFICULTY_MIN                 = 1;
+const uint64_t ZAWY_DIFFICULTY_MIN                 		= 1;
 const unsigned EMISSION_SPEED_FACTOR                         = 20;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
@@ -51,7 +51,7 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 9;
 const uint64_t MINIMUM_FEE                                   = UINT64_C(1000000);
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000000);
 
-const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 20; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                                = 17;
 const size_t   DIFFICULTY_WINDOW_V1                          = 720;
@@ -96,7 +96,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "xcrypto";
-
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121018fca8c2314d9ce474bf179d3163e21558be50d3d60fa9c9a4fc2fce572b9e53d";
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  TRANSACTION_VERSION_1;
@@ -128,7 +128,7 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
-const char* const SEED_NODES[] = { "128.199.164.170:22544" };
+const char* const SEED_NODES[] = { "128.199.179.190:22544" };
 
 
 struct CheckpointData {
