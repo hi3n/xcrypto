@@ -397,6 +397,56 @@ struct block_header_response {
   }
 };
 
+struct f_transaction_short_response {
+  std::string hash;
+  uint64_t fee;
+  uint64_t amount_out;
+  uint64_t size;
+
+  void serialize(ISerializer &s) {
+    KV_MEMBER(hash)
+    KV_MEMBER(fee)
+    KV_MEMBER(amount_out)
+    KV_MEMBER(size)
+  }
+};
+
+struct f_transaction_details_response {
+  std::string hash;
+  size_t size;
+  std::string paymentId;
+  uint64_t mixin;
+  uint64_t fee;
+  uint64_t amount_out;
+
+  void serialize(ISerializer &s) {
+    KV_MEMBER(hash)
+    KV_MEMBER(size)
+    KV_MEMBER(paymentId)
+    KV_MEMBER(mixin)
+    KV_MEMBER(fee)
+    KV_MEMBER(amount_out)
+  }
+};
+
+struct f_block_short_response {
+  uint64_t timestamp;
+  uint32_t height;
+  difficulty_type difficulty;
+  std::string hash;
+  uint64_t tx_count;
+  uint64_t cumul_size;
+
+  void serialize(ISerializer &s) {
+    KV_MEMBER(timestamp)
+    KV_MEMBER(height)
+    KV_MEMBER(difficulty)
+    KV_MEMBER(hash)
+    KV_MEMBER(cumul_size)
+    KV_MEMBER(tx_count)
+  }
+};
+
 struct f_block_details_response {
   uint8_t major_version;
   uint8_t minor_version;  
