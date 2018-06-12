@@ -436,6 +436,19 @@ struct COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT {
 
   typedef BLOCK_HEADER_RESPONSE response;
 };
+struct f_transaction_short_response {
+  std::string hash;
+  uint64_t fee;
+  uint64_t amount_out;
+  uint64_t size;
+
+  void serialize(ISerializer &s) {
+    KV_MEMBER(hash)
+    KV_MEMBER(fee)
+    KV_MEMBER(amount_out)
+    KV_MEMBER(size)
+  }
+};
 
 struct f_block_short_response {
   uint64_t timestamp;
@@ -500,6 +513,7 @@ struct f_block_details_response {
     KV_MEMBER(totalFeeAmount)
   }
 };
+
 
 struct F_COMMAND_RPC_GET_BLOCKS_LIST {
   struct request {
