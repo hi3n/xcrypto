@@ -449,6 +449,23 @@ struct f_transaction_short_response {
     KV_MEMBER(size)
   }
 };
+struct f_transaction_details_response {
+  std::string hash;
+  size_t size;
+  std::string paymentId;
+  uint64_t mixin;
+  uint64_t fee;
+  uint64_t amount_out;
+
+  void serialize(ISerializer &s) {
+    KV_MEMBER(hash)
+    KV_MEMBER(size)
+    KV_MEMBER(paymentId)
+    KV_MEMBER(mixin)
+    KV_MEMBER(fee)
+    KV_MEMBER(amount_out)
+  }
+};
 
 struct f_block_short_response {
   uint64_t timestamp;
