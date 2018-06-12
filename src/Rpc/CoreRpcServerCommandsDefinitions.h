@@ -472,7 +472,63 @@ struct F_COMMAND_RPC_GET_BLOCKS_LIST {
     }
   };
 };
+struct F_COMMAND_RPC_GET_BLOCK_DETAILS {
+  struct request {
+    std::string hash;
 
+    void serialize(ISerializer &s) {
+      KV_MEMBER(hash)
+    }
+  };
+
+  struct response {
+    f_block_details_response block;
+    std::string status;
+
+    void serialize(ISerializer &s) {
+      KV_MEMBER(block)
+      KV_MEMBER(status)
+    }
+  };
+};
+
+struct F_COMMAND_RPC_GET_TRANSACTION_DETAILS {
+  struct request {
+    std::string hash;
+
+    void serialize(ISerializer &s) {
+      KV_MEMBER(hash)
+    }
+  };
+
+  struct response {
+    Transaction tx;
+    f_transaction_details_response txDetails;
+    f_block_short_response block;
+    std::string status;
+
+    void serialize(ISerializer &s) {
+      KV_MEMBER(tx)
+      KV_MEMBER(txDetails)
+      KV_MEMBER(block)
+      KV_MEMBER(status)
+    }
+  };
+};
+
+struct F_COMMAND_RPC_GET_POOL {
+  typedef EMPTY_STRUCT request;
+
+  struct response {
+    std::vector<f_transaction_short_response> transactions; //transactions blobs as hex
+    std::string status;
+
+    void serialize(ISerializer &s) {
+      KV_MEMBER(transactions)
+      KV_MEMBER(status)
+    }
+  };
+};
 struct COMMAND_RPC_QUERY_BLOCKS {
   struct request {
     std::vector<Crypto::Hash> block_ids; //*first 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block */
