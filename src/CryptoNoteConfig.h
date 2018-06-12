@@ -96,7 +96,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "xcrypto";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121018fca8c2314d9ce474bf179d3163e21558be50d3d60fa9c9a4fc2fce572b9e53d";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "";
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  TRANSACTION_VERSION_1;
@@ -128,7 +128,7 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
-const char* const SEED_NODES[] = { "128.199.179.190:22544" };
+const char* const SEED_NODES[] = { "103.253.147.66:22544" };
 
 
 struct CheckpointData {
